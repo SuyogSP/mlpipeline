@@ -1,5 +1,9 @@
-import sys
-import logging
+import sys,os
+#import logging
+file_dir = os.path.dirname(r"D:\Projects\mlpipeline\src")
+sys.path.append(file_dir)
+
+from src.logger import logging
 
 def error_message_detail(error,error_detail:sys):
     _,_,exe_tb = error_detail.exc_info()
@@ -16,4 +20,3 @@ class CustomException(Exception):
 
     def __str__(self):
         return self.error_message
-
